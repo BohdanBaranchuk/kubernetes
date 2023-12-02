@@ -13,4 +13,5 @@ minikube config set memory 9001
 
 echo 'delete all clusters'
 minikube delete --all
-
+echo 'or clusters could be deleted with'
+minikube delete
