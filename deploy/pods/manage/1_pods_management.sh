@@ -32,7 +32,10 @@ kubectl delete -f deploy/pods/configurations/db.yml
 echo 'delete the last pod'
 POD_NAME=$(kubectl get pods -o name | tail -1)
 echo 'pod to be deleted: ' + $POD_NAME
+# here the pod name should be full
 kubectl delete $POD_NAME
+# here the pod name could be short
+kubectl delete pod docker
 
 
 echo 'delete label service from the pod'
