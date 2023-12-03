@@ -26,3 +26,6 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 # go inside
 minikube ssh
 exit
+
+# enable metrics server to have insight how much resources consumed
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
