@@ -1,0 +1,14 @@
+# use all env variables from config map
+apiVersion: v1
+kind: Pod
+metadata:
+  name: alpine-env
+spec:
+  containers:
+    - name: alpine
+      image: alpine
+      command: [ "sleep" ]
+      args: [ "100000" ]
+      envFrom:
+        - configMapRef:
+            name: my-config
