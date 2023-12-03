@@ -15,3 +15,10 @@ echo 'delete all clusters'
 minikube delete --all
 echo 'or clusters could be deleted with'
 minikube delete
+
+# destroy all in cluster
+minikube cluster delete minukube --all
+
+# enable ingress
+minikube addons enable ingress
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.0/deploy/static/provider/cloud/deploy.yaml

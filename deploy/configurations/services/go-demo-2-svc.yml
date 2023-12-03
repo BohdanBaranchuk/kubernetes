@@ -1,0 +1,15 @@
+# this is a declarative way to do the similar as the next imperative command
+# kubectl expose rs go-demo-2 --name=go-demo-2-svc --target-port=28017 --type=NodePort
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-demo-2
+spec:
+  type: NodePort # means that tha ports could be visible withing the cluster as well as outside the cluster
+  ports:
+    - port: 28017 # internal pod port
+      nodePort: 30001 # port visible outside the cluster
+      protocol: TCP # could be skipped as it is def value
+  selector:
+    type: backend
+    service: go-demo-2
