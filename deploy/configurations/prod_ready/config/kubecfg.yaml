@@ -1,0 +1,27 @@
+apiVersion: v1
+clusters:
+  - cluster:
+      certificate-authority-data: ...
+      server: https://api-devops23-k8s-local-ivnbim-609446190.us-east-2.elb.amazonaws.com
+    name: devops23.k8s.local
+contexts:
+  - context:
+      cluster: devops23.k8s.local
+      user: devops23.k8s.local
+    name: devops23.k8s.local
+current-context: devops23.k8s.local
+kind: Config
+preferences: {}
+users:
+  - name: devops23.k8s.local
+    user:
+      as-user-extra: {}
+      client-certificate-data: ...
+      client-key-data: ...
+      password: oeezRbhG4yz3oBUO5kf7DSWcOwvjKZ6l
+      username: admin
+  - name: devops23.k8s.local-basic-auth
+    user:
+      as-user-extra: {}
+      password: oeezRbhG4yz3oBUO5kf7DSWcOwvjKZ6l
+      username: admin
